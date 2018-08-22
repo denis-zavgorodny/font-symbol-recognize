@@ -13,6 +13,7 @@
     "node-tesseract": "^0.2.7",
     "opentype.js": "^0.10.0",
     "pureimage": "^0.1.6",
+    "request": "^2.88.0",
     "tesseract.js": "^1.0.10"
   }
 }

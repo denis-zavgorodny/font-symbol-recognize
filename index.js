@@ -5,11 +5,10 @@ const combine = require('./combineFont');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-
 const fontBasePath = 'font/';
 
 const argParams = {};
-process.argv.forEach(function(val, index, array) {
+process.argv.forEach(function(val, index) {
     if (index > 1) {
         const param = val.split("=");
         if (param.length > 1) {
@@ -19,7 +18,7 @@ process.argv.forEach(function(val, index, array) {
 });
 
 if (!argParams.path) {
-    process.abort();
+    process.exit(1);
 }
 const pathToFont = fontBasePath + path.basename(argParams.path);
 

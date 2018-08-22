@@ -2,6 +2,8 @@ const opentype = require('opentype.js');
 const tesseract = require('node-tesseract');
 const PImage = require('pureimage');
 const fs = require('fs');
+const os = require('os');
+var shell = require('shelljs');
 const path = require('path');
 
 
@@ -14,7 +16,9 @@ function combine(pathToFont) {
     const ctx = img1.getContext('2d');
 
     const fontName = path.basename(pathToFont);
-    const renderImageTo = `${__dirname}/images/${fontName}.jpg`;
+    const renderImageToBase = `${os.tmpdir()}/extfontsymbol/font/images/`;
+    const renderImageTo = `${renderImageToBase}${fontName}.jpg`;
+    shell.mkdir('-p', renderImageToBase);
 
     ctx.fillStyle = 'rgba(255,255,255, 1)';
     ctx.fillRect(0, 0, imageSize.width, imageSize.height);

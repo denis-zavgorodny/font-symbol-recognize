@@ -1,13 +1,16 @@
 #!/usr/bin/env node --no-warnings
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
+var shell = require('shelljs');
 const awaitLoader = require('./httpLoader');
 const combine = require('./combineFont');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 process.env.NODE_NO_WARNINGS = "1";
 
-const fontBasePath = 'font/';
+const fontBasePath = os.tmpdir() + '/extfontsymbol/font/';
+shell.mkdir('-p', fontBasePath);
 
 const argParams = {};
 process.argv.forEach(function(val, index) {

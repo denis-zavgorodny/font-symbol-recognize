@@ -1,9 +1,9 @@
 {
   "bin": {
-      "extFontSymbol": "./index.js"
+    "extfontsymbol": "./index.js"
   },
-  "name": "extFontSymbol",
-  "version": "1.0.0",
+  "name": "extfontsymbol",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "opentype.js": "^0.10.0",
     "pureimage": "^0.1.6",
     "request": "^2.88.0",
+    "shelljs": "^0.8.2",
     "tesseract.js": "^1.0.10"
   }
 }

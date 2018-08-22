@@ -3,7 +3,7 @@
     "extfontsymbol": "./index.js"
   },
   "name": "extfontsymbol",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "iconv": "^2.3.0",
-    "node-tesseract": "^0.2.7",
+    "node-tesseract": "git+https://github.com/denis-zavgorodny/node-tesseract.git",
     "opentype.js": "^0.10.0",
     "pureimage": "^0.1.6",
     "request": "^2.88.0",

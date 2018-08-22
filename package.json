@@ -1,4 +1,7 @@
 {
+  "bin": {
+      "combineFont": "./index.js"
+  },
   "name": "font-extrat",
   "version": "1.0.0",
   "description": "",

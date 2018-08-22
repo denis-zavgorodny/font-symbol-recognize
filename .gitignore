@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+images/
+font/
+.DS_Store

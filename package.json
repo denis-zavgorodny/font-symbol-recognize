@@ -1,8 +1,8 @@
 {
   "bin": {
-      "combineFont": "./index.js"
+      "extFontSymbol": "./index.js"
   },
-  "name": "font-extrat",
+  "name": "extFontSymbol",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

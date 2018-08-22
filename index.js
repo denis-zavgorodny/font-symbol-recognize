@@ -1,10 +1,11 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --no-warnings
 const path = require('path');
 const fs = require('fs');
 const awaitLoader = require('./httpLoader');
 const combine = require('./combineFont');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_NO_WARNINGS = "1";
 
 const fontBasePath = 'font/';
 

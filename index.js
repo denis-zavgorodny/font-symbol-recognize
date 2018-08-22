@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require('path');
-const fs = require('fs');
 const os = require('os');
+const clearFs = require('./clearFs');
 var shell = require('shelljs');
 const awaitLoader = require('./httpLoader');
 const combine = require('./combineFont');
@@ -30,17 +30,13 @@ const pathToFont = fontBasePath + path.basename(argParams.path);
 awaitLoader(argParams.path, pathToFont, argParams.proxy).then((path) => {
     combine(path).then(data => {
         // remove loaded file
-        if (fs.statSync(path).isFile()) {
-            fs.unlinkSync(path);
-        }
+        clearFs(path);
         console.log(data);
     }).catch((err) => {
         if (argParams.debug) {
             console.error(err);
         }
-        if (fs.statSync(path).isFile()) {
-            fs.unlinkSync(path);
-        }
+        clearFs(path);
         process.exit(1);
     });
 });

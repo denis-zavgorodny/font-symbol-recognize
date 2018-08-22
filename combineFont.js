@@ -2,6 +2,7 @@ const opentype = require('opentype.js');
 const tesseract = require('node-tesseract');
 const PImage = require('pureimage');
 const fs = require('fs');
+const clearFs = require('./clearFs');
 const os = require('os');
 var shell = require('shelljs');
 const path = require('path');
@@ -43,6 +44,7 @@ function combine(pathToFont) {
                     tesseract.process(renderImageTo, function (err, text) {
                         if (err) {
                             reject(err);
+                            clearFs(renderImageTo);
                         } else {
                             const res = text.trim().split("").filter(el => el != ' ').reduce((acc, el, index) => {
                                 return {
@@ -50,6 +52,7 @@ function combine(pathToFont) {
                                     [el]: unicodes[index]
                                 };
                             }, {});
+                            clearFs(renderImageTo);
                             resolve(JSON.stringify(res));
                         }
                     });

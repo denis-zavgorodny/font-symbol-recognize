@@ -27,7 +27,7 @@ if (!argParams.path) {
 }
 const pathToFont = fontBasePath + path.basename(argParams.path);
 
-awaitLoader(argParams.path, pathToFont).then((path) => {
+awaitLoader(argParams.path, pathToFont, argParams.proxy).then((path) => {
     combine(path).then(data => {
         // remove loaded file
         if (fs.statSync(path).isFile()) {
@@ -44,4 +44,3 @@ awaitLoader(argParams.path, pathToFont).then((path) => {
         process.exit(1);
     });
 });
-

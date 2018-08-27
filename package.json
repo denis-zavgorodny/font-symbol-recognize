@@ -1,9 +1,10 @@
 {
   "bin": {
-    "extfontsymbol": "./index.js"
+    "extfontsymbol": "./index.js",
+    "crawlerPrice": "./crawler.js"
   },
   "name": "extfontsymbol",
-  "version": "1.0.6",
+  "version": "1.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +13,9 @@
   "author": "Denis Zavgorodny",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "iconv": "^2.3.0",
+    "needle": "^2.2.2",
     "node-tesseract": "git+https://github.com/denis-zavgorodny/node-tesseract.git",
     "opentype.js": "^0.10.0",
     "pureimage": "^0.1.6",

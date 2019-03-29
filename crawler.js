@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 var shell = require('shelljs');
 const url = require('url');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "1";
 process.env.NODE_NO_WARNINGS = "1";
 
 
@@ -42,7 +42,7 @@ if (argParams.proxy) {
         proxy
     }
 }
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 needle('get', argParams.url, options).then(res => {
     const match = res.body.match(regexFont);
     shell.exec(`extfontsymbol path=${fontDomain}${match[1]} ${proxy}`, needleOptions, (code, fontRes, stderr) => {

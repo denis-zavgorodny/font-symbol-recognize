@@ -42,7 +42,7 @@ if (argParams.proxy) {
         proxy
     }
 }
-
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 needle('get', argParams.url, options).then(res => {
     const match = res.body.match(regexFont);
     shell.exec(`extfontsymbol path=${fontDomain}${match[1]} ${proxy}`, needleOptions, (code, fontRes, stderr) => {

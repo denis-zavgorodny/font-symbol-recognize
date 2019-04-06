@@ -1,10 +1,6 @@
 # extfontsymbol and Crawler
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-You should to install package with global flag `npm install -g extfontsymbol`
+You should install package with global flag `npm install -g extfontsymbol`
 
 ### Prerequisites
 

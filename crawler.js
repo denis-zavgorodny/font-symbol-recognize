@@ -46,6 +46,10 @@ if (argParams.proxy) {
 needle('get', argParams.url, options).then(res => {
     const match = res.body.match(regexFont);
     shell.exec(`extfontsymbol path=${fontDomain}${match[1]} ${proxy}`, needleOptions, (code, fontRes, stderr) => {
+        if (stderr) {
+            console.log(stderr);
+            return;
+        }
         try {
             fontRes = JSON.parse(fontRes);
             const fontResMatch = {};
